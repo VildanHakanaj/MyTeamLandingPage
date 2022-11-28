@@ -60,7 +60,7 @@ html:focus-within
 body
   background-color: c.$primary-600
   color: c.$white
-  margin: 3rem 0
+  margin: 3rem 0 0 0
   .hidden
     display: none
 
@@ -73,15 +73,35 @@ body
     margin: 0 auto 5rem
 
 .hero
-  height: 407px
   width: 100%
-  padding: 0 1.5rem
+  height: 407px
   background-image: url("../assets/bg-pattern-home-2.svg")
   background-position: bottom left 10px
   background-repeat: no-repeat
   @media only screen and (min-width: 768px)
     height: 476px
     background-position: bottom center
+  @media only screen and (min-width: 1280px)
+    background: url("../assets/bg-pattern-home-1.svg") left -100px top no-repeat, url("../assets/bg-pattern-home-2.svg") bottom right no-repeat
+  .wrapper
+    padding: 0 1.5rem
+    @media only screen and (min-width: 920px)
+      display: flex
+      align-items: end
+      gap: 30px
+      h1
+        text-align: left
+        flex: 1
+        max-width: 100%
+        display: inline-block
+        margin: 0
+        font: 700 100px/100px f.$family
+      p
+        text-align: left
+        flex: 1
+        margin: 0
+        font: 600 18px/28px f.$family
+        max-width: 445px
   h1
     max-width: 248px
     margin: 0 auto 1.125rem auto
@@ -105,21 +125,31 @@ body
 
 
 
-.features-section .wrapper
+
+.features-section
   width: 100%
   background-color: c.$primary-800
   height: 100%
-  padding: 64px 1.5rem
   background-image: url("../assets/bg-pattern-home-3.svg")
   background-repeat: no-repeat
   background-position: top right -100px
-  display: flex
-  flex-direction: column
-  gap: 3rem
-  justify-content: center
+  @media only screen and (min-width: 975px)
+    background-position: bottom right -100px
+
+  .wrapper
+    padding: 64px 1.5rem
+    display: flex
+    flex-direction: column
+    gap: 3rem
+    justify-content: center
+    @media only screen and (min-width: 975px)
+      flex-direction: row
+      padding: 100px 98px
+      gap: 2rem
   @media only screen and (min-width: 768px)
     padding: 100px 98px
     gap: 2rem
+
   .feature:not(:last-child)
     margin-bottom: 2rem
   h2
@@ -161,82 +191,96 @@ body
       text-align: center
       width: 100%
       font: 600 15px/25px f.$family
-
-.testimonials-section .wrapper
-  width: 100%
-  height: 100%
-  padding: 100px 97px
+.testimonials-section
   background-color: c.$primary-700
   background: url("../assets/bg-pattern-home-4-about-3.svg") no-repeat top left, url("../assets/bg-pattern-home-5.svg") no-repeat bottom right
-  h2
-    font: 700 32px/32px f.$family
-    margin-bottom: 3rem
-    text-align: center
-    @media only screen and (min-width: 768px)
-      max-width: 451px
-      margin-inline: auto
-
-
-    span
-      color: c.$primary-100
-  .testimonial
-    position: relative
-    margin-bottom: 3rem
-    .quoteImg
-      position: relative
-      top: 18px
-      margin: 0 auto
-    .author
-      width: 100%
+  .wrapper
+    width: 100%
+    height: 100%
+    padding: 100px 97px
+    h2
+      font: 700 32px/32px f.$family
+      margin-bottom: 3rem
       text-align: center
-      font: 700 18px/28px f.$family
-      color: c.$primary-100
-    .quote
+      @media only screen and (min-width: 768px)
+        max-width: 451px
+        margin-inline: auto
+        @media only screen and (min-width: 978px)
+          max-width: 630px
+
+      span
+        color: c.$primary-100
+    .testimonial
       position: relative
-      font: 600 15px/25px f.$family
-      margin-bottom: 1rem
-      text-align: center
-    .avatar
-      width: 62px
-      height: 62px
-      border-radius: 50%
-      border: 2px solid c.$primary-100
-      margin: 0 auto
-      img
+      margin-bottom: 3rem
+      .quoteImg
+        position: relative
+        top: 18px
+        margin: 0 auto
+      .author
+        width: 100%
+        text-align: center
+        font: 700 18px/28px f.$family
+        color: c.$primary-100
+      .quote
+        position: relative
+        font: 600 15px/25px f.$family
+        margin-bottom: 1rem
+        text-align: center
+      .avatar
+        width: 62px
+        height: 62px
         border-radius: 50%
-    .title
-      font-style: italic
-      font: 13px/18px f.$family
-      text-align: center
-      margin-bottom: 1rem
-.contact-us-section .wrapper
-  display: flex
-  width: 100%
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  gap: 1.5rem
-  padding: 83px 1.5rem
+        border: 2px solid c.$primary-100
+        margin: 0 auto
+        img
+          border-radius: 50%
+      .title
+        font-style: italic
+        font: 13px/18px f.$family
+        text-align: center
+        margin-bottom: 1rem
+    .testimonials
+      @media only screen and (min-width: 978px)
+        display: flex
+        gap: 30px
+
+.contact-us-section
   background-color: c.$accent
   color: c.$primary-800
   background-image: url("../assets/bg-pattern-home-6-about-5.svg")
   background-repeat: no-repeat
   background-position: bottom -22px left
-  @media only screen and (min-width: 768px)
-    flex-direction: row
-    align-items: center
+  .wrapper
+    display: flex
+    width: 100%
+    flex-direction: column
     justify-content: center
-    gap: 84px
-  h2
-    font: 700 32px/32px f.$family
-    text-align: center
-    margin-bottom: 1.5rem
+    align-items: center
+    gap: 1.5rem
+    padding: 83px 1.5rem
     @media only screen and (min-width: 768px)
-      margin-bottom: 0
-      text-align: start
-      width: auto
+      flex-direction: row
+      align-items: center
+      justify-content: center
+      gap: 84px
+    @media only screen and (min-width: 1110px)
+      justify-content: space-between
+    h2
+      font: 700 32px/32px f.$family
+      text-align: center
+      margin-bottom: 1.5rem
+      @media only screen and (min-width: 768px)
+        margin-bottom: 0
+        text-align: start
+        width: auto
+      @media only screen and (min-width: 978px)
+        font: 700 48px/48px f.$family
+
 
 .btn
+  cursor: pointer
+  transition: .3s ease-in-out
   border: 2px solid
   font: 600 18px/28px f.$family
   height: 48px
@@ -254,8 +298,12 @@ body
   &-light
     color: c.$white
     border-color: c.$white
+    &:hover
+      color: c.$primary-900
+      background-color: c.$white
 
 footer
+  background-color: c.$primary-900
   .wrapper
     padding: 66px 1.5rem
     display: flex
@@ -263,7 +311,6 @@ footer
     justify-content: center
     gap: 1.5rem
     align-items: center
-    background-color: c.$primary-900
     width: 100%
     height: 100%
     @media only screen and (min-width: 768px)
